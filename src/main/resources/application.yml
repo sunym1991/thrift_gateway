@@ -1,0 +1,34 @@
+thrifteasy:
+  basedir: /data
+  generated-python-code-dir: /Users/sunyumei/workspace/thrift_easy_data/thrift-python
+  thrift-file-dir: /Users/sunyumei/workspace/thrift_easy_data/thrift-src
+  tar-dir: /Users/sunyumei/workspace/thrift_easy_data/compress-file
+  build-data-dir: /Users/sunyumei/workspace/thrifteasy/build/data
+  html-path: /Users/sunyumei/workspace/thrift_easy_data/thrift-src/
+  python-code-gen: /Users/sunyumei/workspace/thrifteasy/src/main/resources/thrift-gen.sh ${thrifteasy.generated-python-code-dir} ${thrifteasy.thrift-file-dir} ${thrifteasy.tar-dir} {client} {version} ${thrifteasy.build-data-dir}
+  python-code-gen-by-git: /Users/sunyumei/workspace/thrifteasy/src/main/resources/thrift-gen-by-git.sh ${thrifteasy.generated-python-code-dir} ${thrifteasy.thrift-file-dir} ${thrifteasy.tar-dir} {client} {version} ${thrifteasy.build-data-dir} {branch}
+  service-method-run: /${thrifteasy.generated-python-code-dir}/{client}/{version}/{serviceName}-remote -h {address} -f {function}
+  env:
+
+logging:
+  level: info
+  level.com.xhs.qa: DEBUG
+  path: ../log
+
+server:
+  port: 9090
+
+zookeeper:
+  url:
+  baseSleepTimeMs: 1000
+  maxRetry: 3
+  namespace:
+
+spring:
+  data:
+    mongodb:
+      database: thrifteasy
+      host: 127.0.0.1
+      port: 27017
+
+
